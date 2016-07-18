@@ -234,7 +234,7 @@ else
 	openvpn --genkey --secret /etc/openvpn/ta.key
 	# Generate server.conf
 	echo "port $PORT
-proto udp
+proto tcp
 dev tun
 sndbuf 0
 rcvbuf 0
@@ -366,7 +366,7 @@ crl-verify crl.pem" >> /etc/openvpn/server.conf
 	# client-common.txt is created so we have a template to add further users later
 	echo "client
 dev tun
-proto udp
+proto tcp
 sndbuf 0
 rcvbuf 0
 remote $IP $PORT
